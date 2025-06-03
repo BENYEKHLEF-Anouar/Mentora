@@ -56,16 +56,19 @@ Bienvenue sur le dépôt GitHub de **Mentora**, un projet de plateforme web coll
 ## Structure du projet
 
 mentora/
-├── backend/                # Backend code (PHP/Node.js, Express)
-│   ├── config/            # Database and API configurations
-│   ├── routes/            # API endpoints
-│   ├── models/            # Database models
-│   └── controllers/       # Business logic
-├── frontend/               # Frontend code (React, Tailwind CSS)
-│   ├── src/               # React components, pages, and styles
-│   ├── public/            # Static assets (images, HTML)
-│   └── assets/            # CSS, images, and other resources
-├── docs/                  # Documentation (e.g., this README)
-└── .gitignore             # Git ignore file
+├── backend/                # Code du backend (PHP/Node.js, Express)
+│   ├── config/             # Configuration de la BDD, tokens, etc.
+│   ├── routes/             # Définition des routes API (REST)
+│   ├── models/             # Modèles de données (utilisateurs, sessions, etc.)
+│   └── controllers/        # Logique métier et gestion des requêtes
+│
+├── frontend/               # Code du frontend (React + Tailwind CSS)
+│   ├── src/                # Composants React, pages, services, hooks
+│   ├── public/             # Fichiers statiques (index.html, favicon, images)
+│   └── assets/             # Ressources : images, feuilles de style, logos
+│
+├── docs/                   # Documentation du projet (README, wireframes, specs)
+│
+└── .gitignore              # Fichiers/dossiers exclus de Git (node_modules, .env, etc.)
 
 ---
