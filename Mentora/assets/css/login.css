@@ -1,0 +1,505 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    overflow-x: hidden;
+}
+
+/* Header with Logo and Social Icons */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    background: url('../images/White_Tower_Symbol.webp') no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.logo-text {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #1a202c;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+
+    margin-left: -0.3rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #4a5568;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon.instagram:hover {
+    border-color: #e53e3e;
+    color: #e53e3e;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.2);
+}
+
+.social-icon.telegram:hover {
+    border-color: #2b6cb0;
+    color: #2b6cb0;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.2);
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Main content container */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 540px;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 20px;
+    /* box-shadow: 0 10px 30px rgba(109, 109, 109, 0.05); */
+    margin: 0 auto;
+    margin-top: 1.8rem;
+
+   /* Enhancement */
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+}
+
+/* Title Section */
+.title_container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #718096;
+    line-height: 1.5;
+    font-family: 'Manrope', sans-serif;
+}
+
+/* Form Layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Input Groups */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2d3748;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Input Container */
+.relative {
+    position: relative;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    padding: 0.875rem 3rem 0.875rem 3rem;
+    width: 100%;
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #2d3748;
+    transition: all 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Left Icons */
+.relative .left-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #a0aec0;
+    transition: color 0.3s ease;
+}
+
+/* Eye Toggle Icon */
+.eye-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.eye-toggle:hover {
+    color: #2563eb;
+}
+
+input:focus+div .left-icon {
+    color: #2563eb;
+}
+
+/* Uiverse Button */
+.btn {
+    padding: 0.875rem;
+    width: 100%;
+    background: #2563eb;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+}
+
+.sparkle {
+    fill: #ffffff;
+    width: 20px;
+    height: 20px;
+    transition: all 800ms ease;
+}
+
+.text {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Manrope', sans-serif;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #3a6dd8 0%, #3f79f6 100%);
+    transform: translateY(-2px);
+}
+
+.btn:hover .text {
+    color: white;
+}
+
+.btn:hover .sparkle {
+    fill: white;
+    transform: scale(1.2);
+}
+
+/* Placeholder */
+input::placeholder {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    font-family: 'Manrope', sans-serif;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    padding: 0.875rem;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Placeholder */
+input::placeholder {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    /* font-family: 'Manrope', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/* Separator */
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 0.7rem 0;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.separator .line {
+    flex: 1;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+.separator span {
+    margin: 0 1rem;
+    font-weight: 500;
+}
+
+/* Switch form link */
+.switch-form {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.2rem;
+    margin-bottom: -0.5rem;
+
+/* If i removed the seperator, then i can use this
+    margin-top: 1.2rem;
+    margin-bottom: -0.4rem; */
+}
+
+.switch-form a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+
+.switch-form a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.switch-form a:hover::after {
+    width: 100%;
+}
+
+/* Animated Background Icons */
+.bg-icons {
+    position: fixed;
+    top: 1%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.08;
+}
+
+.floating-icon {
+    position: absolute;
+    animation: float 8s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(49, 130, 206, 0.2));
+}
+
+.floating-icon svg {
+    fill: #2563eb;
+}
+
+.floating-icon:nth-child(2) {
+    animation-delay: -1.5s;
+}
+
+.floating-icon:nth-child(3) {
+    animation-delay: -3s;
+}
+
+.floating-icon:nth-child(4) {
+    animation-delay: -0.5s;
+}
+
+.floating-icon:nth-child(5) {
+    animation-delay: -2.5s;
+}
+
+.floating-icon:nth-child(6) {
+    animation-delay: -4s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(90deg) scale(1.05);
+    }
+}
+
+.icon-star-1 {
+    top: 20%;
+    left: 12%;
+}
+
+.icon-bulb-1 {
+    top: 25%;
+    right: 10%;
+}
+
+.icon-rocket-1 {
+    bottom: 25%;
+    left: 10%;
+}
+
+.icon-grad-1 {
+    top: 55%;
+    right: 12%;
+}
+
+.icon-star-2 {
+    bottom: 15%;
+    right: 15%;
+}
+
+.icon-bulb-2 {
+    top: 35%;
+    left: 8%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    .header {
+        padding: 0.75rem 1rem;
+    }
+
+    .container {
+        padding: 1.25rem;
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    }
+
+    .relative svg {
+        left: 0.75rem;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+/* Fixed Large Student Image */
+.fixed-student-image {
+    position: fixed;
+    bottom: 20px;
+    right: -95px;
+    z-index: 1;
+    /* opacity: 0.7; */
+    transition: all 0.3s ease;
+}
+
+.fixed-student-image img {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); */
+}
+
+.fixed-student-image2 {
+    position: fixed;
+    top: 140px;
+    left: -25px;
+    z-index: 1;
+    /* opacity: 0.7; */
+    transition: all 0.3s ease;
+}
+
+.fixed-student-image2 img {
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 15px;
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); */
+}
