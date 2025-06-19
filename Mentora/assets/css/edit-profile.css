@@ -1,0 +1,196 @@
+/* --- existing edit-profile.css styles --- */
+.edit-profile-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--slate-800);
+}
+
+.profile-card {
+    background-color: var(--white);
+    border: 1px solid var(--slate-200);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+}
+
+.profile-card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--slate-200);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: var(--slate-700);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--slate-300);
+    background-color: var(--slate-50);
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease; /* MODIFIED: Added transition for smooth effect */
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.profile-card button {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    font-family: 'Manrope', sans-serif;
+}
+
+.photo-upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#photoPreview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#photoUpload {
+    display: none;
+}
+
+.photo-upload-label {
+    cursor: pointer;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.sidebar-back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--slate-600);
+    margin-bottom: 1rem;
+    padding: 0.25rem 0;
+    margin-left: -8rem;
+}
+
+
+/* MODIFIED: This selector has been updated to match the login page for consistency */
+.error-message {
+    display: flex;
+    align-items: center;
+    color: #e63946;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-top: 6px;
+    gap: 6px;
+}
+
+/* Messages (Existing styles are fine) */
+.message { 
+    padding: 1rem; 
+    border-radius: var(--border-radius-md); 
+    margin-bottom: 1.5rem; 
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.message i { font-size: 1.25rem; }
+.message.success { background-color: #d1fae5; color: #065f46; border-left: 4px solid #10b981; }
+.message.error { background-color: #fee2e2; color: #991b1b; border-left: 4px solid #ef4444; }
+
+
+/* 
+============================================================
+MODIFIED: STYLES ADDED FROM LOGIN.CSS FOR VALIDATION & ICONS
+============================================================
+*/
+
+/* Container for positioning the icon */
+.relative {
+    position: relative;
+}
+
+/* Make password input have padding-right to not overlap with icon */
+.relative input[type="password"] {
+    padding-right: 3rem; 
+}
+
+/* Eye Toggle Icon Style (copied from login.css) */
+.eye-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #a0aec0; /* Neutral gray */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.eye-toggle:hover {
+    color: #2563eb; /* Primary blue from login */
+}
+
+/* Input Field Error/Success States (copied logic from login.css) */
+/* The existing `.form-group.error input` is not used, we use this more specific one */
+input.error {
+    border-color: #e63946 !important;
+    background: #fef0f0;
+}
+input.error:focus {
+    box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.2);
+}
+
+/* When the input has the 'error' class, its sibling eye-toggle turns red */
+input.error ~ .eye-toggle { 
+    color: #e63946;
+}
+
+/* (Optional but good practice) Success State */
+input.success {
+    border-color: #2a9d8f !important;
+    background: #e6f4ea;
+}
+input.success:focus {
+    box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.2);
+}
+input.success ~ .eye-toggle {
+    color: #2a9d8f;
+}
